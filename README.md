@@ -36,8 +36,8 @@ A modern Android application demonstrating secure payment processing with Stripe
 
 1. **Clone the repository**
    ```bash
-   git clone https://github.com/yourusername/stripe-payment-app.git
-   cd stripe-payment-app
+   git clone https://github.com/rameshwx/stripepaymentapp.git
+   cd stripepaymentapp
    ```
 
 2. **Open in Android Studio**
@@ -69,30 +69,30 @@ A modern Android application demonstrating secure payment processing with Stripe
    Create `create-payment-intent.php` with this content:
    ```php
    <?php
-   // Set headers for JSON response
+   
    header('Content-Type: application/json');
    header('Access-Control-Allow-Origin: *');
    header('Access-Control-Allow-Methods: POST');
    header('Access-Control-Allow-Headers: Content-Type');
 
-   // Check if it's a POST request
+   
    if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
        http_response_code(405);
        echo json_encode(['error' => 'Method not allowed']);
        exit;
    }
 
-   // Get POST data
+   
    $data = json_decode(file_get_contents('php://input'), true);
 
-   // Validate request data
+   
    if (!isset($data['amount']) || !isset($data['orderNumber'])) {
        http_response_code(400);
        echo json_encode(['error' => 'Missing required parameters']);
        exit;
    }
 
-   // Required Stripe PHP library
+   
    require_once('vendor/autoload.php');
 
    // Set your secret key
@@ -110,7 +110,7 @@ A modern Android application demonstrating secure payment processing with Stripe
            ],
        ]);
 
-       // Return client secret
+       
        echo json_encode([
            'clientSecret' => $paymentIntent->client_secret,
            'paymentIntentId' => $paymentIntent->id
