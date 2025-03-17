@@ -30,7 +30,7 @@ class AppModule {
     @Singleton
     fun provideStripeConfiguration(context: Context): PaymentConfiguration {
         // Initialize Stripe publishable key
-        PaymentConfiguration.init(context, "pk_test_51ImhUEGRdQfhxaSJOCyltUeJL5VtoBPxc8ysIqJdxx6tCsIBXXIH2y42BtVMLIW0iYrVIufFY3XL6ZmPAXzbqHHx00NXlqbFjZ")
+        PaymentConfiguration.init(context, "pk_test_replace_with_your_key")
         return PaymentConfiguration.getInstance(context)
     }
 }

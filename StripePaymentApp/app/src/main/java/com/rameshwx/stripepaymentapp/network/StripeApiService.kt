@@ -13,7 +13,7 @@ import javax.inject.Singleton
 class StripeApiService @Inject constructor(
     private val requestQueue: RequestQueue
 ) {
-    private val PAYMENT_API_URL = "https://nodecmb.com/stripe/create-payment-intent.php"
+    private val PAYMENT_API_URL = "https://testsite.com/stripe/create-payment-intent.php"
 
     fun createPaymentIntent(
         order: Order,
